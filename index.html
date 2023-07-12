@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <link rel="shortcut icon" href="icons/icon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4285f4" />
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="https://netflix-1uh.pages.dev/og.jpg"/>
+  <meta name="description"
+    content="Discover and stream your favorite movies and TV shows with NETFLIX KE PITAJI - an open source content search and watch website. Enjoy unlimited access to a vast library of content for free.">
+  <title>NETFLIX KE PITAJI</title>
+  <link rel="preload stylesheet" href="style.min.css" as="style">
+  <link rel="preload stylesheet" href="center-atom.min.css" as="style">
+  <script async src="jquery.js"></script>
+ 
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+          console.log('Service worker registered: ', registration.scope);
+        }).catch(function(error) {
+          console.log('Service worker registration failed: ', error);
+        });
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <div class="search-container">
+    <input type="search" id="search-input" placeholder="Search any Movie/Webseries/Anime">
+    <button id="search-button">Search</button>
+  </div>
+  <center>
+    <div id="video" class="video">
+      <iframe id="iframe" src="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <p style="color: rgb(79, 221, 221); font-weight: 500;">In case of any Error or Too Much Buffering click again on
+        your Movie poster down below or just change the Server from the left corner in video player. </p>
+      <!-- Go to www.addthis.com/dashboard to customize your tools -->
+      <div class="addthis_inline_share_toolbox"></div>
+      <div id="webSeriesData"></div>
+    </div>
+  </center>
+  <div id="results"></div>
+  <center style="margin-top: 2vh;">
+    <div class="alwaysVisibleContent">
+      <h1><u>NETFLIX KE PITAJI</u></h1>
+      <h2 style="color: rgb(55, 255, 255);">Netflix, on us. Free</h2>
+      <h3>Search any Movie/Webseries/Anime</h3>
+      <div class="pagelinks">
+        <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>
+        <a href="/terms-and-conditions.html" target="_blank">Terms And Conditions</a>
+        <a href="https://github.com/pulkitpareek18/netflix" target="_blank">Source Code</a>
+        <a href="/contact.html" target="_blank">Contact</a>
+      </div>
+    </div>
+  
+  </center>
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+  <script src="script.min.js"></script>
+ 
+</body>
+</html>
